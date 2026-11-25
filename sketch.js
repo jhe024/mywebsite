@@ -4,7 +4,7 @@ let asteroids = [];
 let asteroidAmount = 50;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
   A1 = new Asteroid(50,50);
   A2 = new Asteroid(100,100);
 
@@ -31,6 +31,11 @@ function draw() {
     asteroids[i].checkMouse();
   }
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
 
 class Asteroid {
   constructor(x,y){
